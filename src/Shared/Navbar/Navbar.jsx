@@ -4,13 +4,13 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const navLinks = (
     <>
-      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5" : "mr-5 hover:text-warning px-3 py-2" } to={"/"}> Home
+      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase" : "mr-5 uppercase hover:text-warning px-3 py-2" } to={"/"}> Home
       </NavLink>
-      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5" : " mr-5 hover:text-warning px-3 py-2" } to={"about"}> about
+      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase" : " mr-5 uppercase hover:text-warning px-3 py-2" } to={"about"}> about
       </NavLink>
-      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5" : "mr-5 hover:text-warning px-3 py-2" } to={"/myWork"}> Works
+      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase" : "mr-5 uppercase hover:text-warning px-3 py-2" } to={"/myWork"}> Features
       </NavLink>
-      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5" : "mr-5 hover:text-warning px-3 py-2" } to={"/contact"}> Contact
+      <NavLink className={({isActive}) => isActive? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase" : "mr-5 uppercase hover:text-warning px-3 py-2" } to={"/contact"}> Contact
       </NavLink>
     </>
   );
@@ -49,7 +49,7 @@ const Navbar = () => {
             data-aos-duration="3000"
             className="hover:text-white text-warning"
           >
-            𝕄𝕆ℝ𝕊ℍ𝔼𝔻 𝔸𝕃𝔸𝕄
+            T-ASSISTANCE
           </button>
         </Link>
       </div>
@@ -62,15 +62,15 @@ const Navbar = () => {
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="3000"
-            className="hover:text-red-600"
+            className="hover:text-warning"
           >
-            𝕄𝕆ℝ𝕊ℍ𝔼𝔻 <span className="text-warning font-bold">𝔸𝕃𝔸𝕄</span>
+            T-ASSISTANCE
           </button>
         </Link>
         <Link data-aos="flip-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="3000"  className="hidden md:block" to={"contact"}>
-          <button className="text-warning font-bold text-lg btn btn-sm btn-outline hover:border-red-600 hover:bg-white hover:text-black">
+          <button className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
             LOGIN
           </button>
         </Link>

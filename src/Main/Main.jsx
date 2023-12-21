@@ -4,9 +4,9 @@ import Footer from "../Shared/Footer/Footer";
 
 const Main = () => {
     return (
-        <div className="">
+        <div className="overflow-hidden">
             <Navbar></Navbar>
-            <div className='bg-[#9EC8B9] max-w-screen-2xl mx-auto'>
+            <div className=''>
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
