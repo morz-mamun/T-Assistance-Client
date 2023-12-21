@@ -69,7 +69,7 @@ const Navbar = () => {
         </Link>
         <Link data-aos="flip-right"
             data-aos-easing="ease-out-cubic"
-            data-aos-duration="3000"  className="hidden md:block" to={"contact"}>
+            data-aos-duration="3000"  className="hidden md:block" to={"/login"}>
           <button className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
             LOGIN
           </button>
