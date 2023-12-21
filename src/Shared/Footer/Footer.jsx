@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="grid grid-cols-3 p-10 bg-[#092635]">
-      <nav className="flex flex-col">
+    <footer className="bg-[#092635]">
+     <div className="p-10 max-w-screen-2xl mx-auto">
+    <div className="flex justify-around mb-5">
+    <nav className="flex flex-col">
         <header className="footer-title">Services</header>
         <a className="link link-hover">Branding</a>
         <a className="link link-hover">Design</a>
@@ -17,7 +19,7 @@ const Footer = () => {
       </nav>
       <nav>
         <header className="footer-title">Social</header>
-        <div className="grid grid-flow-col gap-4">
+        <div className="flex gap-10">
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +55,9 @@ const Footer = () => {
           </a>
         </div>
       </nav>
+    </div>
+      <p className="text-center">Copyright © 2023 - All right reserved by</p>
+     </div>
     </footer>
   );
 };
