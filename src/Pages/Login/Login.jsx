@@ -72,15 +72,15 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-      <title>T-Assistance | Login</title>
+      <title>T-Assistance | SignIn</title>
       </Helmet>
       <div className="hero md:min-h-screen" style={{ backgroundImage: `url()` }}>
 
        
-         <div className="bg-[#092635]  md:py-20 rounded-lg py-2">
-          <div className="hero-content flex-col md:px-20 md:space-y-12">
-            <div className="w-80 md:w-[550px] text-left">
+         <div className="bg-[#092635] md:py-20 rounded-lg py-2 my-5">
+          <div className="flex-col md:px-20 md:space-y-12">
 
+            <div className="w-80 md:w-[550px] md:text-left text-center">
               <div className="flex flex-col border-opacity-50">
                 {/* <div className=" h-10 w-1/2 mx-auto rounded-box place-items-center"> </div> */}
                 <button className='flex items-center justify-center gap-3' onClick={handleGoogleSignIn}>
@@ -94,11 +94,8 @@ const Login = () => {
               </div>
 
 
-
-
-
             </div>
-            <div className="w-full text-white">
+            <div className="w-3/4 mx-auto md:w-full text-white">
               <form onSubmit={handleSignIn} className="">
                 <div className="form-control ">
                   <label className="label">

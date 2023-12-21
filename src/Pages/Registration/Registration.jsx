@@ -83,15 +83,15 @@ const Registration = () => {
 
         <div className="bg-[#092635] md:py-20 rounded-lg py-2 my-5">
           <div className="flex-col md:px-20 md:space-y-12">
-            <div className="w-80 md:w-[550px] text-left">
+            <div className="w-80 md:w-[550px] md:text-left text-center">
              
               <h1 className="text-xl md:text-5xl text-warning font-bold">Registration now!</h1>
             </div>
-            <div className="w-full text-white">
+            <div className="w-3/4 mx-auto md:w-full text-white">
               <form onSubmit={handleSignUp}>
                 <div className="form-control ">
                   <label className="label">
-                    <span className="text-white font-bold">Name</span>
+                    <span className="text-white text-sm md:text-base font-bold">Name</span>
                   </label>
                   <input type="text"
                     name="name"
@@ -99,13 +99,13 @@ const Registration = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="text-xl font-bold">Photo URL</span>
+                    <span className="font-bold">Photo URL</span>
                   </label>
                   <input type="text" name="photo" placeholder="photo URL" className="input input-bordered text-black" required />
                 </div>
                 <div className="form-control ">
                   <label className="label">
-                    <span className="text-white font-bold">Email</span>
+                    <span className="text-white text-sm md:text-base font-bold">Email</span>
                   </label>
                   <input type="email"
                     name="email"
@@ -113,7 +113,7 @@ const Registration = () => {
                 </div>
                 <div className="form-control mt-5 relative">
                   <label className="label">
-                    <span className="text-white font-bold">Password</span>
+                    <span className="text-white text-sm md:text-base font-bold">Password</span>
                   </label>
                   <input type={showPass ? 'text' : 'password'}
                     name="password"

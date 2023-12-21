@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1B4242]">
      <div className="p-10 max-w-screen-2xl mx-auto">
-    <div className="flex justify-around mb-5">
+    <div className="flex flex-col justify-around mb-5">
     <nav className="flex flex-col">
         <header className="footer-title">Services</header>
         <a className="link link-hover">Branding</a>
