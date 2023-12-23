@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import login2 from '../../../assets/login2.jpg'
 import Swal from 'sweetalert2'
 import { FcGoogle } from "react-icons/fc";
@@ -11,6 +11,10 @@ import { useState } from 'react';
 const Login = () => {
   const {loginUser, googleLogin} = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const too = location.state?.from?.pathname || "/";
+ 
+
   const [showPass, setShowPass] = useState(false)
   const Toast = Swal.mixin({
     toast: true,
@@ -29,9 +33,9 @@ const Login = () => {
       .then(() => {
         Toast.fire({
           icon: 'success',
-          title: 'User Google Sing In successfully'
+          title: 'User Google Sign In successfully'
         })
-        navigate('/')
+        navigate(too, {replace: true})
       })
       .catch(() => {
         Toast.fire({
@@ -58,7 +62,7 @@ const Login = () => {
           })
         }
         form.reset()
-        navigate('/')
+        navigate(too, {replace: true})
       })
       .catch(() => {
         Toast.fire({

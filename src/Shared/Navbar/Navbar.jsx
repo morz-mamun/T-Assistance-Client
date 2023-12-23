@@ -1,9 +1,36 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
-  
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  const handleLogout = () => {
+    logoutUser()
+    .then(() => {
+      Toast.fire({
+        icon: 'success',
+        title: 'User Sign Out successfully'
+      })
+    })
+    .catch(() => {
+      Toast.fire({
+        icon: 'error',
+        title: 'User Sign Out failed'
+      })
+    })
+  }
   const navLinks = (
     <>
       <NavLink
@@ -49,6 +76,17 @@ const Navbar = () => {
       >
         {" "}
         Contact
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase"
+            : "mr-5 uppercase hover:text-warning px-3 py-2"
+        }
+        to={"/dashboard"}
+      >
+        {" "}
+        DASHBOARD
       </NavLink>
     </>
   );
@@ -105,7 +143,17 @@ const Navbar = () => {
               T-ASSISTANCE
             </button>
           </Link>
-          <Link
+         {
+          user ?  <div
+          data-aos="flip-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="3000"
+          className="hidden md:block"
+        >
+          <button onClick={handleLogout} className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
+            SIGN OUT
+          </button>
+        </div> :  <Link
             data-aos="flip-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="3000"
@@ -113,9 +161,10 @@ const Navbar = () => {
             to={"/login"}
           >
             <button className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
-              LOGIN
+              SIGN IN
             </button>
           </Link>
+         }
         </div>
       </div>
     </div>
