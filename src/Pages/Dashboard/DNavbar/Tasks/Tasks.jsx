@@ -54,6 +54,7 @@ const Tasks = () => {
 
   return (
     <div className="px-2 md:px-10 py-5 text-black">
+        {/* top and Add task */}
       <div className="flex justify-between items-center">
         <p className="uppercase font-bold md:text-lg flex items-center gap-1">
           <SiTask></SiTask> Tasks Board
@@ -162,12 +163,15 @@ const Tasks = () => {
           </div>
         </dialog>
       </div>
+
+      {/* bottom */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-10">
         <div>
           <div className="border-t-2 border-blue-600 p-2 flex items-center gap-2 text-blue-600 uppercase rounded-lg bg-blue-100 hover:scale-105">
             <div className="flex items-center gap-1">
               {" "}
-              <LuListTodo></LuListTodo> To Do{" "}
+             <div> <LuListTodo></LuListTodo> To Do{" "}</div>
+             <div></div>
             </div>
           </div>
 
@@ -175,7 +179,7 @@ const Tasks = () => {
         </div>
         <div>
           <div className="border-t-2 border-purple-600 p-2 flex items-center gap-2 uppercase text-purple-600 rounded-lg bg-purple-100 hover:scale-105">
-            <FcProcess></FcProcess> In Process
+            <FcProcess></FcProcess> On Going
           </div>
           <div></div>
         </div>
