@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import banner from "../../../assets/banner1.png";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 const Banner = () => {
@@ -7,7 +8,9 @@ const Banner = () => {
         <div className="md:w-1/2">
           <img src={banner} className="" />
           <div className="flex items-center justify-center mb-5 md:hidden">
-            <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
+           <Link to={"/login"}>
+           <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
+           </Link>
           </div>
         </div>
         <div className="md:w-1/2 p-5">
@@ -20,7 +23,9 @@ const Banner = () => {
             a id nisi.
           </p>
           <div className="mt-10 hidden md:block">
-            <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
+           <Link to={'/login'}>
+           <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
+           </Link>
           </div>
         </div>
       </div>

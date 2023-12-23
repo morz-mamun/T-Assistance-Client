@@ -34,6 +34,7 @@ const Registration = () => {
     const password = form.password.value
     console.log(email, password);
 
+    
     setError('')
 
     if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/.test(password)) {
