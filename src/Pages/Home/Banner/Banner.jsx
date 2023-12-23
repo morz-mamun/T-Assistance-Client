@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="md:w-1/2">
           <img src={banner} className="" />
           <div className="flex items-center justify-center mb-5 md:hidden">
-           <Link to={"/login"}>
+           <Link to={"/dashboard"}>
            <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
            </Link>
           </div>
