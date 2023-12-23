@@ -1,9 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
+  const navigate = useNavigate()
 
   const Toast = Swal.mixin({
     toast: true,
@@ -23,6 +24,7 @@ const Navbar = () => {
         icon: 'success',
         title: 'User Sign Out successfully'
       })
+      navigate('/')
     })
     .catch(() => {
       Toast.fire({
