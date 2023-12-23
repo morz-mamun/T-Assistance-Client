@@ -3,8 +3,23 @@ import { SiTask } from "react-icons/si";
 import { FcProcess } from "react-icons/fc";
 import { MdFileDownloadDone } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
+import useAxios from "../../../../Hooks/useAxios";
 
-const Tasks = () => {
+const Tasks = () => {   
+    const axiosPublic = useAxios()
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top",
+        iconColor: "blue",
+        customClass: {
+          popup: "colored-toast",
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+      });
+    
   const handleAddTask = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,6 +30,23 @@ const Tasks = () => {
     const date_too = form.date_too.value;
     const priority = form.priority.value;
 
+    const taskInfo = {email, title, descriptions, date_from, date_too, priority}
+
+    axiosPublic.post('/allTask', taskInfo)
+    .then((res) => {
+        if(res.data.insertedId){
+            Toast.fire({
+                icon: "success",
+                title: "User Registration Successfully.",
+              });
+        }
+    })
+    .catch((err) => {
+        Toast.fire({
+            icon: "error",
+            title: err.message,
+          });  
+    } )
     
   };
   return (
