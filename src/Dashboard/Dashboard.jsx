@@ -27,7 +27,7 @@ const DashBoard = () => {
               <MdOutlineDashboard></MdOutlineDashboard> DASHBOARD
             </div>
           </NavLink>
-          
+
           <NavLink
             className={({ isActive }) =>
               isActive
@@ -60,7 +60,7 @@ const DashBoard = () => {
       </div>
       <div className="flex-1">
         <DNavbar></DNavbar>
-        <div className="bg-white h-[calc(100vh-66px)] ">
+        <div className="bg-white ">
         <Outlet></Outlet>
         </div>
       </div>
