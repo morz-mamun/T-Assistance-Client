@@ -4,35 +4,35 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const Toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: "top-end",
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: true,
     didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  })
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
   const handleLogout = () => {
     logoutUser()
-    .then(() => {
-      Toast.fire({
-        icon: 'success',
-        title: 'User Sign Out successfully'
+      .then(() => {
+        Toast.fire({
+          icon: "success",
+          title: "User Sign Out successfully",
+        });
+        navigate("/");
       })
-      navigate('/')
-    })
-    .catch(() => {
-      Toast.fire({
-        icon: 'error',
-        title: 'User Sign Out failed'
-      })
-    })
-  }
+      .catch(() => {
+        Toast.fire({
+          icon: "error",
+          title: "User Sign Out failed",
+        });
+      });
+  };
   const navLinks = (
     <>
       <NavLink
@@ -43,31 +43,9 @@ const Navbar = () => {
         }
         to={"/"}
       >
-        {" "}
         Home
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase"
-            : " mr-5 uppercase hover:text-warning px-3 py-2"
-        }
-        to={"about"}
-      >
-        {" "}
-        about
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase"
-            : "mr-5 uppercase hover:text-warning px-3 py-2"
-        }
-        to={"/myWork"}
-      >
-        {" "}
-        Features
-      </NavLink>
+
       <NavLink
         className={({ isActive }) =>
           isActive
@@ -76,7 +54,6 @@ const Navbar = () => {
         }
         to={"/contact"}
       >
-        {" "}
         Contact
       </NavLink>
       <NavLink
@@ -87,9 +64,18 @@ const Navbar = () => {
         }
         to={"/dashboard"}
       >
-        {" "}
         DASHBOARD
       </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "bg-warning text-black rounded-lg px-3 py-2 mr-5 uppercase"
+            : " mr-5 uppercase hover:text-warning px-3 py-2"
+        }
+        to={"about"}
+      >
+        about
+      </NavLink> 
     </>
   );
   return (
@@ -145,28 +131,33 @@ const Navbar = () => {
               T-ASSISTANCE
             </button>
           </Link>
-         {
-          user ?  <div
-          data-aos="flip-right"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="3000"
-          className="hidden md:block"
-        >
-          <button onClick={handleLogout} className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
-            SIGN OUT
-          </button>
-        </div> :  <Link
-            data-aos="flip-right"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="3000"
-            className="hidden md:block"
-            to={"/login"}
-          >
-            <button className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
-              SIGN IN
-            </button>
-          </Link>
-         }
+          {user ? (
+            <div
+              data-aos="flip-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="3000"
+              className="hidden md:block"
+            >
+              <button
+                onClick={handleLogout}
+                className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black"
+              >
+                SIGN OUT
+              </button>
+            </div>
+          ) : (
+            <Link
+              data-aos="flip-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="3000"
+              className="hidden md:block"
+              to={"/login"}
+            >
+              <button className="text-warning btn btn-sm btn-outline hover:bg-white hover:text-black">
+                SIGN IN
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

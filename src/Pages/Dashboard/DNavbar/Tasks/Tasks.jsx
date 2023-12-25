@@ -10,12 +10,19 @@ import useAllTask from "../../../../Hooks/useAllTask";
 import TaskCard from "./TaskCard";
 import useAuth from "../../../../Hooks/useAuth";
 import Modal from "./Modal/Modal";
+import { useQuery } from "@tanstack/react-query";
 
 
 const Tasks = () => {
   const axiosPublic = useAxios();
-  const [allTask, refetch] = useAllTask();
   const {user} = useAuth()
+  const {data: userAllTask=[], refetch} = useQuery({
+    queryKey: ["userAllTask"],
+    queryFn: async() => {
+      const res = await axiosPublic.get(`/allTask?email=${user?.email}`)
+      return res.data
+    }
+  })
 
 
 //   const { register, handleSubmit, reset } = useForm();
@@ -109,13 +116,13 @@ const Tasks = () => {
                 <LuListTodo></LuListTodo> To Do
               </div>
               <div className="w-8 text-center rounded-full bg-blue-600 text-white">
-                {allTask.length}
+                {userAllTask.length}
               </div>
             </div>
           </div>
 
           <div className="space-y-5 my-5">
-            {allTask?.map((task, index) => (
+            {userAllTask?.map((task, index) => (
               <TaskCard key={task._id} task={task} index={index} handleDeleteTask={handleDeleteTask}></TaskCard>
             ))}
           </div>
@@ -130,7 +137,7 @@ const Tasks = () => {
                 <FcProcess></FcProcess> On Going
               </div>
               <div className="w-8 text-center rounded-full bg-blue-600 text-white">
-                {allTask.length}
+                {}
               </div>
             </div>
           </div>
@@ -145,7 +152,7 @@ const Tasks = () => {
             <MdFileDownloadDone></MdFileDownloadDone> Complete
             </div>
             <div className="w-8 text-center rounded-full bg-blue-600 text-white">
-                {allTask.length}
+                {}
               </div>
            </div>
           </div>

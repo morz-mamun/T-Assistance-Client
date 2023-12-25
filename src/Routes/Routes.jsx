@@ -7,7 +7,9 @@ import DashBoard from "../Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Tasks from "../Pages/Dashboard/DNavbar/Tasks/Tasks";
 import EditTask from "../Pages/Dashboard/DNavbar/Tasks/EditTask/EditTask";
-import TaskCard from "../Pages/Dashboard/DNavbar/Tasks/TaskCard";
+import AllTask from "../Pages/Dashboard/AllTask/AllTask";
+import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +19,17 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>
+        },
+        {
+          path: '/about',
+          element: <About></About>
+        },
+        {
+
+        },
+        {
+          path: '/contact',
+          element: <Contact></Contact>
         },
         {
             path: '/login',
@@ -32,6 +45,10 @@ const router = createBrowserRouter([
       path: "dashboard",
       element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children: [
+        {
+          path: "/dashboard",
+          element: <AllTask></AllTask>
+        },
         {
           path: 'task',
           element: <PrivateRoute><Tasks></Tasks></PrivateRoute>
