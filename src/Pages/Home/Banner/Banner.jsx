@@ -4,7 +4,7 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 const Banner = () => {
   return (
     <div className="bg-[#092635]">
-      <div className="flex flex-col-reverse md:flex-row-reverse md:pt-10  max-w-screen-xl justify-center items-center mx-auto md:h-[600px]">
+      <div className="flex flex-col-reverse md:flex-row-reverse md:pt-10  max-w-screen-xl justify-center items-center mx-auto md:h-[760px]">
         <div className="md:w-1/2">
           <img src={banner} className="" />
           <div className="flex items-center justify-center mb-5 md:hidden">
