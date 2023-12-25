@@ -140,7 +140,7 @@ const Navbar = () => {
               data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
               data-aos-duration="3000"
-              className="hover:text-warning"
+              className="text-warning"
             >
               T-ASSISTANCE
             </button>

@@ -4,17 +4,26 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 const Banner = () => {
   return (
     <div className="bg-[#092635]">
-      <div className="flex flex-col-reverse md:flex-row-reverse md:pt-10  max-w-screen-xl justify-center items-center mx-auto md:h-[760px]">
+      <div className="flex flex-col-reverse md:flex-row-reverse md:pt-10  max-w-screen-xl justify-center items-center mx-auto md:h-[800px]">
         <div className="md:w-1/2">
           <img src={banner} className="" />
           <div className="flex items-center justify-center mb-5 md:hidden">
-           <Link to={"/dashboard"}>
-           <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
-           </Link>
+            <Link to={"/dashboard"}>
+              <button className="btn btn-outline text-warning hover:bg-white hover:text-black">
+                LET'S EXPLORE{" "}
+                <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket>
+              </button>
+            </Link>
           </div>
         </div>
         <div className="md:w-1/2 p-5">
-          <h1 className="text-2xl md:text-5xl font-bold">
+          <h1
+            data-aos="fade-right"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="2000"
+            className="text-2xl md:text-5xl font-bold"
+          >
             Best Way to Manage <br /> Your Daily Tasks
           </h1>
           <p className="py-6">
@@ -23,9 +32,12 @@ const Banner = () => {
             a id nisi.
           </p>
           <div className="mt-10 hidden md:block">
-           <Link to={'dashboard'}>
-           <button className="btn btn-outline text-warning hover:bg-white hover:text-black">LET'S EXPLORE <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket></button>
-           </Link>
+            <Link to={"dashboard"}>
+              <button className="btn btn-outline text-warning hover:bg-white hover:text-black">
+                LET'S EXPLORE{" "}
+                <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

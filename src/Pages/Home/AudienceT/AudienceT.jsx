@@ -1,14 +1,15 @@
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 import target from "../../../assets/target.png";
 
 const AudienceT = () => {
   return (
-    <div className="bg-[#092635] py-20">
+    <div data-aos="zoom-in-up" className="bg-[#092635] py-20">
       <div className="max-w-screen-xl mx-auto space-y-8">
-        <div className="w-1/2 mx-auto space-y-5">
-          <h1 className="uppercase text-center text-4xl text-warning">
+        <div className="px-5 md:w-1/2 mx-auto space-y-5">
+          <h1 className="uppercase text-center text-xl md:text-4xl text-warning">
             Targeted Audience
           </h1>
-          <p className="text-pretty text-center">
+          <p className="md:text-pretty md:text-center">
             Welcome to our diverse community! This website caters to a wide
             range of individuals, providing valuable resources and opportunities
             tailored to various professions and interests. Whether you're a
@@ -17,12 +18,12 @@ const AudienceT = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2">
-          <div className="">
+        <div className="flex gap-8 flex-col md:flex-row">
+          <div className="md:w-1/2">
             <img src={target} alt="" />
           </div>
-          <div className="flex items-center">
-            <div className="space-y-3">
+          <div className="flex items-center md:w-1/2">
+            <div className="space-y-3 px-5">
               <h1 className="text-2xl">
                <span className="text-2xl">Hello...</span> <br />
                 Developers and Programmers
@@ -32,6 +33,7 @@ const AudienceT = () => {
                 vibrant community for networking and collaboration. Stay updated
                 on the latest technologies and industry trends.
               </p>
+              <button className="btn btn-sm btn-outline border-none text-warning hover:bg-white hover:text-black">Read More... </button>
             </div>
           </div>
         </div>
