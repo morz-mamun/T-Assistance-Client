@@ -1,4 +1,4 @@
-import { FaArrowRightFromBracket } from "react-icons/fa6";
+
 import target from "../../../assets/target.png";
 
 const AudienceT = () => {
