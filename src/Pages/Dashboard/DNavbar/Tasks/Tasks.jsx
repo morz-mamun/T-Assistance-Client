@@ -2,11 +2,8 @@ import { LuListTodo } from "react-icons/lu";
 import { SiTask } from "react-icons/si";
 import { FcProcess } from "react-icons/fc";
 import { MdFileDownloadDone } from "react-icons/md";
-import { IoMdAdd } from "react-icons/io";
 import useAxios from "../../../../Hooks/useAxios";
 import Swal from "sweetalert2";
-import { useForm } from "react-hook-form";
-import useAllTask from "../../../../Hooks/useAllTask";
 import TaskCard from "./TaskCard";
 import useAuth from "../../../../Hooks/useAuth";
 import Modal from "./Modal/Modal";
@@ -16,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 const Tasks = () => {
   const axiosPublic = useAxios();
   const {user} = useAuth()
+  
   const {data: userAllTask=[], refetch} = useQuery({
     queryKey: ["userAllTask"],
     queryFn: async() => {

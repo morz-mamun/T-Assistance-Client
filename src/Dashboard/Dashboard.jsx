@@ -52,12 +52,13 @@ const DashBoard = () => {
             </button>
           </Link>
           <div className="md:hidden flex items-center gap-1">
-            <div>
-              <img className="size-10 rounded-full" src={user.photoURL} alt="" />
-            </div>
-            <button onClick={handleLogout} className="text-warning btn btn-xs btn-outline hover:bg-white hover:text-black">
+          <button onClick={handleLogout} className=" text-warning btn btn-xs btn-outline hover:bg-white hover:text-black">
             <span className="text-xs">SIGN OUT</span>
           </button>
+            <div className="">
+              <img className="size-10 rounded-full" src={user.photoURL} alt="" />
+            </div>
+            
           </div>
         </div>
 

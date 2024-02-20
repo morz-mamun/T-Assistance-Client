@@ -9,17 +9,17 @@ const AllTaskCart = ({task}) => {
           <div className="flex justify-between items-center">
             <div className="w-fit">
               {priority === "High" && (
-                <p className="bg-red-600 px-3 text-white uppercase rounded-2xl">
+                <p className="bg-red-600 px-3 text-white uppercase rounded-2xl text-xs py-1 font-bold">
                   {priority}
                 </p>
               )}
               {priority === "Medium" && (
-                <p className="bg-orange-600 px-3 text-white uppercase rounded-2xl">
+                <p className="bg-orange-600 px-3 text-white uppercase rounded-2xl text-xs py-1 font-bold">
                   {priority}
                 </p>
               )}
               {priority === "Low" && (
-                <p className="bg-blue-600 px-3 text-white uppercase rounded-2xl">
+                <p className="bg-blue-600 px-3 text-white uppercase rounded-2xl text-xs py-1 font-bold">
                   {priority}
                 </p>
               )}
