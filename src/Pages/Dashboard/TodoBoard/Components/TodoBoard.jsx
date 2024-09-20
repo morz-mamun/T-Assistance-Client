@@ -65,7 +65,7 @@ const TodoBoard = () => {
     };
 
     return (
-            <div className="px-2 md:px-10 py-5 text-black">
+            <div className="min-h-screen px-2 md:px-10 py-5 text-black">
                 {/* Top and Add Task */}
                 <div className="flex justify-between items-center">
                     <p className="uppercase font-bold md:text-lg flex items-center gap-1">
