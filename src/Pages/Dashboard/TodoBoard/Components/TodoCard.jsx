@@ -1,24 +1,11 @@
 import { Card, CardContent, Typography } from "@mui/material"
 import { useState } from "react";
-// import { BiArrowFromLeft, BiArrowFromRight } from "react-icons/bi";
-import { TfiControlBackward, TfiControlForward } from "react-icons/tfi";
 import TodoDetailsModal from "./TodoModal";
 const TodoCard = ({ name, title, description, shortDescription, companyName, onForwardStatusChange, onBackwardStatusChange, status, companySize, companyWebsite, industry, phoneNumber, businessEmail, service, conpanyHQ, backgroundColor, hoverColor }) => {
   const [open, setOpen] = useState(false);
 
   const handleModal = () => {
     setOpen((pre) => !pre);
-  };
-
-  // Stop event propagation -> when change status modal event don't show
-  const handleBackwardClick = (e) => {
-    e.stopPropagation();
-    onBackwardStatusChange();
-  };
-
-  const handleForwardClick = (e) => {
-    e.stopPropagation();
-    onForwardStatusChange();
   };
 
   return (
