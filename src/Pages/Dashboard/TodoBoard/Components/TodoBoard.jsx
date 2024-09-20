@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import useAxios from "../../../../Hooks/useAxios";
 import Column from "./Column";
 import TodoCard from "./TodoCard";
@@ -9,19 +9,24 @@ import { VscOpenPreview } from "react-icons/vsc";
 import Modal from "../../DNavbar/Tasks/Modal/Modal";
 import { SiTask } from "react-icons/si";
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
+import useAuth from "../../../../Hooks/useAuth";
 const TodoBoard = () => {
+    const queryClient = useQueryClient();
     const axiosPublic = useAxios();
-    // Get all admin orders
-    const { data: allTasks = [], refetch } = useQuery({
-        queryKey: ['allTasks'],
-        queryFn: async () => {
-            const res = await axiosPublic.get('/allTask');
-            return res.data;
-        }
-    });
+    const {user} = useAuth()
+
+  
+    // Get all tasks by user    
+  const {data: userAllTask=[], refetch} = useQuery({
+    queryKey: ["userAllTask"],
+    queryFn: async() => {
+      const res = await axiosPublic.get(`/allTask?email=${user?.email}`)
+      return res.data
+    }
+  })
 
     const filterDataByStatus = (status) => {
-        return allTasks?.filter((todo) => todo.status === status);
+        return userAllTask?.filter((todo) => todo.status === status);
     };
 
     const backLog = filterDataByStatus('backlog');
@@ -32,22 +37,27 @@ const TodoBoard = () => {
     // Handle drag-and-drop logic
     const handleDragEnd = async (result) => {
         const { destination, source, draggableId } = result;
-        console.log('Drag result:', result); // Debugging line
-        if (!destination) {
+        console.log('Drag result:', result);
+        if (!destination || destination?.droppableId === source?.droppableId) {
             return
-        } // If dropped outside a droppable area, do nothing
-        if (destination?.droppableId === source?.droppableId) {
-            return
-        } // If the item is dropped in the same place, do nothing
+        }
 
-        const task = allTasks?.find(item => item._id === draggableId);
+        const task = userAllTask?.find(item => item._id === draggableId);
 
         if (task) {
+            // card store before update
+            queryClient.setQueryData(["userAllTask"], (oldData) => {
+                return oldData?.map(item => 
+                    item._id === draggableId 
+                    ? { ...item, status: destination.droppableId } 
+                    : item
+                );
+            });
             try {
                 await axiosPublic.patch(`/allTask/${task?._id}`, {
                     status: destination.droppableId
                 });
-                refetch(); // Refetch tasks after updating the status
+                refetch();
             } catch (error) {
                 console.error("Failed to update task status:", error);
             }
