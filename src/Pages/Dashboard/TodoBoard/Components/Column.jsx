@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const Column = React.forwardRef(({ title, className, icon: Icon, counts, children, ...props }, ref) => (
   <div ref={ref} {...props}>
@@ -18,6 +19,15 @@ const Column = React.forwardRef(({ title, className, icon: Icon, counts, childre
   </div>
 ));
 
-Column.displayName = 'Column'; // Required for React.forwardRef
+Column.displayName = 'Column'; 
+
+Column.propTypes = {
+  title: propTypes.string.isRequired,
+  className: propTypes.string,
+  icon: propTypes.elementType,
+  counts: propTypes.number,
+  children: propTypes.node,
+};
+
 
 export default Column;
