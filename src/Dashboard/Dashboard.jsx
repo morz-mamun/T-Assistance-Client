@@ -38,7 +38,7 @@ const DashBoard = () => {
     })
   }
   return (
-    <div className="flex flex-col md:flex-row max-w-screen-2xl mx-auto">
+    <div className="flex flex-col min-h-screen md:flex-row mx-auto">
       <div className="md:w-72 md:min-h-screen bg-[rgb(9,38,53)] md:text-center">
         <div className="border-b-2 border-warning py-5 flex justify-between items-center px-2">
           <Link className="text-warning" to={"/"}>
