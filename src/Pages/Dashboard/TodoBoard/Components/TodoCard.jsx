@@ -1,7 +1,8 @@
 import { Card, CardContent, Typography } from "@mui/material"
 import { useState } from "react";
 import TodoDetailsModal from "./TodoModal";
-const TodoCard = ({ name, title, description, shortDescription, companyName, onForwardStatusChange, onBackwardStatusChange, status, companySize, companyWebsite, industry, phoneNumber, businessEmail, service, conpanyHQ, backgroundColor, hoverColor }) => {
+import PropTypes from 'prop-types';
+const TodoCard = ({ name, title, description, shortDescription, service, backgroundColor, companyName, status, hoverColor }) => {
   const [open, setOpen] = useState(false);
 
   const handleModal = () => {
@@ -44,18 +45,21 @@ const TodoCard = ({ name, title, description, shortDescription, companyName, onF
         name={name}
         title={title}
         description={description}
-        companyName={companyName}
-        companyHQ={conpanyHQ}
-        companySize={companySize}
-        companyWebsite={companyWebsite}
-        industry={industry}
-        phoneNumber={phoneNumber}
-        service={service}
-        businessEmail={businessEmail}
-
       />
     </>
   )
 }
+
+TodoCard.propTypes = {
+  name: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  shortDescription: PropTypes.string,
+  service: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  companyName: PropTypes.string,
+  status: PropTypes.string,
+  hoverColor: PropTypes.string
+} 
 
 export default TodoCard

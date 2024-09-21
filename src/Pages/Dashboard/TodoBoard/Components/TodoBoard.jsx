@@ -14,7 +14,6 @@ const TodoBoard = () => {
     const queryClient = useQueryClient();
     const axiosPublic = useAxios();
     const {user} = useAuth()
-
   
     // Get all tasks by user    
   const {data: userAllTask=[], refetch, isLoading, isError} = useQuery({
