@@ -1,8 +1,8 @@
 
-
+import propTypes from "prop-types";
 
 const AllTaskCart = ({task}) => {
-    const { _id, title, descriptions, name, date_from, date_too, priority } = task;
+    const { title, descriptions, name, date_from, date_too, priority } = task;
     return (
         <div className="rounded-md bg-blue-100 shadow-xl">
         <div className="p-4 space-y-2">
@@ -37,6 +37,10 @@ const AllTaskCart = ({task}) => {
         </div>
       </div>
     );
+};
+
+AllTaskCart.propTypes = {
+  task: propTypes.object.isRequired,
 };
 
 export default AllTaskCart;
