@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
@@ -41,10 +41,10 @@ const DNavbar = () => {
             <div className="py-2 flex items-center gap-5 ">
               <img
                 className="w-12 h-12 rounded-full"
-                src={user.photoURL}
+                src={user?.photoURL}
                 alt=""
               />
-              <h1>{user.displayName}</h1>
+              <h1>{user?.displayName}</h1>
             </div>
           </div>
           <div>

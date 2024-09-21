@@ -39,9 +39,9 @@ const DashBoard = () => {
   }
   return (
     <div className="flex flex-col min-h-screen md:flex-row mx-auto">
-      <div className="md:w-72 md:min-h-screen bg-[rgb(9,38,53)] md:text-center">
-        <div className="border-b-2 border-warning py-5 flex justify-between items-center px-2">
-          <Link className="text-warning" to={"/"}>
+      <div className="md:w-72 md:min-h-screen bg-[rgb(9,38,53)] md:text-center ">
+        <div className="border-b-2 border-warning py-5 flex justify-between items-center md:pl-16">
+          <Link className="text-warning text-2xl" to={"/"}>
             <button
               data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
@@ -63,36 +63,37 @@ const DashBoard = () => {
         </div>
 
         <ul className="menu md:p-4 text-base border-b-2 border-warning space-y-5">
-          <NavLink>
-            <div className="flex items-center justify-center gap-2 pl-4 font-bold">
-              <MdOutlineDashboard></MdOutlineDashboard> TASK DASHBOARD
+          <div
+            className="uppercase hover:bg-warning hover:rounded-lg hover:text-black"
+          >
+            <div className="flex items-center gap-2 py-2 pl-3">
+              <MdOutlineDashboard className="text-xl"/> TASKS DashBoard
             </div>
-          </NavLink>
-
+          </div>
           <NavLink
             className={({ isActive }) =>
               isActive
                 ? "bg-warning text-black rounded-lg uppercase"
-                : "uppercase hover:text-warning"
+                : "uppercase hover:bg-warning hover:rounded-lg hover:text-black"
             }
             to={"/dashboard/task"}
           >
             <div className="flex items-center gap-2 py-2 pl-4">
-              <FaList></FaList> TASKS
+              <FaList></FaList>My TASKS
             </div>
           </NavLink>
         </ul>
 
         {/* bottom */}
         <ul className="menu md:p-4 text-base">
-          <li className="uppercase">
+          <li className="uppercase hover:bg-warning hover:rounded-lg hover:text-black">
             <NavLink to={"/"}>
               <FaHome></FaHome>
               Home
             </NavLink>
           </li>
-          <li className="uppercase">
-            <NavLink to={"/ourOrder/contact"}>
+          <li className="uppercase hover:bg-warning hover:rounded-lg hover:text-black">
+            <NavLink to={"/contact"}>
               <FaAddressCard></FaAddressCard>
               Contact
             </NavLink>

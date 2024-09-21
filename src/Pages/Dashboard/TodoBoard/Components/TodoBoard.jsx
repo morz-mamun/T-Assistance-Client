@@ -17,13 +17,19 @@ const TodoBoard = () => {
 
   
     // Get all tasks by user    
-  const {data: userAllTask=[], refetch} = useQuery({
+  const {data: userAllTask=[], refetch, isLoading, isError} = useQuery({
     queryKey: ["userAllTask"],
     queryFn: async() => {
       const res = await axiosPublic.get(`/allTask?email=${user?.email}`)
-      return res.data
+      return res?.data
     }
   })
+  if (isLoading) {
+    return <p className="text-center text-red-600 font-medium">Loading...</p>;
+}
+if (isError) {
+    return <p className="text-center text-red-600 font-medium">Error</p>;
+}
 
     const filterDataByStatus = (status) => {
         return userAllTask?.filter((todo) => todo.status === status);
@@ -63,6 +69,8 @@ const TodoBoard = () => {
             }
         }
     };
+
+    
 
     return (
             <div className="min-h-screen px-2 md:px-10 py-5 text-black">
