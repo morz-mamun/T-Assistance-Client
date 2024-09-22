@@ -23,50 +23,6 @@ const Tasks = () => {
   })
 
 
-//   const { register, handleSubmit, reset } = useForm();
-
-//   const Toast = Swal.mixin({
-//     toast: true,
-//     position: "top",
-//     iconColor: "blue",
-//     customClass: {
-//       popup: "colored-toast",
-//     },
-//     showConfirmButton: false,
-//     timer: 1500,
-//     timerProgressBar: true,
-//   });
-
-//   const onSubmit = async (data) => {
-//     const taskInfo = {
-//       name: data.name,
-//       email: data.email,
-//       title: data.title,
-//       descriptions: data.descriptions,
-//       date_from: data.date_from,
-//       date_too: data.date_too,
-//       priority: data.priority,
-//     };
-
-//     axiosPublic
-//       .post("/allTask", taskInfo)
-//       .then((res) => {
-//         if (res.data.insertedId) {
-//           reset();
-//           Toast.fire({
-//             icon: "success",
-//             title: "Task Added Successfully.",
-//           });
-//         }
-//       })
-//       .catch((err) => {
-//         Toast.fire({
-//           icon: "error",
-//           title: err.message,
-//         });
-//       });
-//   };
-
   const handleDeleteTask = (_id) => {
     Swal.fire({
         title: "Are you sure?",
