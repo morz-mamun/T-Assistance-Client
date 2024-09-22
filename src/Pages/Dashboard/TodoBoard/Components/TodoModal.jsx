@@ -1,8 +1,9 @@
 
 import { Dialog, DialogTitle, DialogContent, Typography } from '@mui/material';
 import { MdClose } from 'react-icons/md';
+import PropTypes from 'prop-types';
 
-const TodoDetailsModal = ({ open, handleModal, title, description, companyName, companyHQ, companySize, companyWebsite, industry, status, phoneNumber, service, businessEmail, name, backgroundColor }) => {
+const TodoDetailsModal = ({ open, handleModal, title, description, companyName, status,  name, businessEmail, backgroundColor }) => {
     return (
         <Dialog open={open} onClose={handleModal} fullWidth maxWidth="md">
             <DialogTitle style={{ backgroundColor }} className='flex justify-between items-center uppercase font-bold '>
@@ -29,30 +30,6 @@ const TodoDetailsModal = ({ open, handleModal, title, description, companyName, 
                         <strong>Company:</strong> {companyName}
                     </Typography>
                 </div>
-                <div className='grid grid-cols-2'>
-                    <Typography gutterBottom>
-                        <strong>Company HQ:</strong> {companyHQ}
-                    </Typography>
-                    <Typography gutterBottom>
-                        <strong>Company Size:</strong> {companySize}
-                    </Typography>
-                </div>
-                <div className='grid grid-cols-2'>
-                    <Typography gutterBottom>
-                        <strong>Website:</strong> <a href={companyWebsite} target="_blank" rel="noopener noreferrer">{companyWebsite}</a>
-                    </Typography>
-                    <Typography gutterBottom>
-                        <strong>Industry:</strong> {industry}
-                    </Typography>
-                </div>
-                <div className='grid grid-cols-2'>
-                    <Typography gutterBottom>
-                        <strong>Phone Number:</strong> {phoneNumber}
-                    </Typography>
-                    <Typography gutterBottom>
-                        <strong>Service:</strong> {service}
-                    </Typography>
-                </div>
                 <Typography gutterBottom>
                     <strong>Description:</strong> {description}
                 </Typography>
@@ -60,5 +37,17 @@ const TodoDetailsModal = ({ open, handleModal, title, description, companyName, 
         </Dialog>
     );
 };
+
+TodoDetailsModal.propTypes = {
+    open: PropTypes.bool,
+    handleModal: PropTypes.func,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    companyName: PropTypes.string,
+    status: PropTypes.string,
+    businessEmail: PropTypes.string,
+    name: PropTypes.string,
+    backgroundColor: PropTypes.string
+}
 
 export default TodoDetailsModal;
