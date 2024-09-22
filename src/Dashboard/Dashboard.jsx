@@ -40,7 +40,7 @@ const DashBoard = () => {
   return (
     <div className="flex flex-col min-h-screen md:flex-row mx-auto">
       <div className="md:w-72 md:min-h-screen bg-[rgb(9,38,53)] md:text-center ">
-        <div className="border-b-2 border-warning py-5 flex justify-between items-center md:pl-16">
+        <div className="border-b-2 border-warning py-4 flex justify-between items-center md:pl-8">
           <Link className="text-warning text-2xl" to={"/"}>
             <button
               data-aos="flip-left"

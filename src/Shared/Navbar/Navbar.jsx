@@ -86,7 +86,7 @@ const Navbar = () => {
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-6 w-6 hover:text-warning "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -106,7 +106,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link className="hidden md:block" to={"/"}>
+          <Link className="hidden md:block text-xl" to={"/"}>
             <button
               data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
