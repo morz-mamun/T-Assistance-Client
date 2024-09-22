@@ -1,10 +1,8 @@
-
-
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 
-
-const TaskCard = ({ task, index, handleDeleteTask }) => {
+const TaskCard = ({ task, handleDeleteTask }) => {
   const { _id, title, descriptions, name, date_from, date_too, priority } = task;
   
   return (
@@ -56,6 +54,13 @@ const TaskCard = ({ task, index, handleDeleteTask }) => {
       </div>
     </div>
   );
+};
+
+TaskCard.propTypes = {
+  task: PropTypes.object,
+  index: PropTypes.number,
+  handleDeleteTask: PropTypes.func,
+
 };
 
 export default TaskCard;

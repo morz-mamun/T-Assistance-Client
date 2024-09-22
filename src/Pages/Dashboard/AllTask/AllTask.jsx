@@ -3,7 +3,7 @@ import useAllTask from "../../../Hooks/useAllTask";
 import AllTaskCart from "./AllTaskCart";
 
 const AllTask = () => {
-  const [allTask, refetch] = useAllTask();
+  const [allTask] = useAllTask();
 
   return (
     <div className=" p-10 text-black h-[calc(100vh-66px)]">
