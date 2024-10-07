@@ -143,7 +143,7 @@ const EditTask = () => {
               <span className="">Priority*</span>
             </label>
             <select
-              className="border-2 p-2 w-full"
+              className="border-2 p-3 w-full"
               defaultValue={priority}
               {...register("priority")}
             >
@@ -165,3 +165,4 @@ const EditTask = () => {
 };
 
 export default EditTask;
+// ok nigro
