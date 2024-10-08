@@ -12,7 +12,7 @@ const AllTask = () => {
           <SiTask></SiTask> All Tasks
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-5 mt-10">
+      <div className="grid grid-cols-3 gap-4 mt-10">
         {allTask?.map((task) => (
           <AllTaskCart key={task._id} task={task}></AllTaskCart>
         ))}
