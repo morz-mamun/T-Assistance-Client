@@ -34,7 +34,7 @@ const Banner = () => {
           <div className="mt-10 hidden md:block">
             <Link to={"dashboard"}>
               <button className="btn btn-outline text-warning hover:bg-white hover:text-black">
-                LET'S EXPLORE{" "}
+                LET&apos;S EXPLORE{" "}
                 <FaArrowRightFromBracket className="text-xl"></FaArrowRightFromBracket>
               </button>
             </Link>
