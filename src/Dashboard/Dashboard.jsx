@@ -65,31 +65,13 @@ const DashBoard = () => {
         {/* dashboard url */}
 
         <ul className="menu md:p-4 text-base border-b-2 border-warning space-y-5">
-          
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "bg-warning text-black rounded-lg uppercase"
-                : "uppercase hover:bg-warning hover:rounded-lg hover:text-black"
-            }
-            to={"/dashboard"}
+          <div
+            className="uppercase hover:bg-warning hover:rounded-lg hover:text-black"
           >
-            <div className="flex items-center gap-2 py-2 pl-4">
-              <MdOutlineDashboard/> Tasks Dashboard
+            <div className="flex items-center gap-2 py-2 pl-3">
+              <MdOutlineDashboard className="text-xl"/> TASKS DashBoard
             </div>
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "bg-warning text-black rounded-lg uppercase"
-                : "uppercase hover:bg-warning hover:rounded-lg hover:text-black"
-            }
-            to={"/dashboard/alltask"}
-          >
-            <div className="flex items-center gap-2 py-2 pl-4">
-              <MdOutlineDashboard/> All Tasks
-            </div>
-          </NavLink>
+          </div>
           <NavLink
             className={({ isActive }) =>
               isActive
