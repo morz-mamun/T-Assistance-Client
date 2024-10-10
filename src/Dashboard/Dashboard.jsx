@@ -72,10 +72,22 @@ const DashBoard = () => {
                 ? "bg-warning text-black rounded-lg uppercase"
                 : "uppercase hover:bg-warning hover:rounded-lg hover:text-black"
             }
-            to={"/dashboard/mytask"}
+            to={"/dashboard"}
           >
             <div className="flex items-center gap-2 py-2 pl-4">
               <MdOutlineDashboard/> Tasks Dashboard
+            </div>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "bg-warning text-black rounded-lg uppercase"
+                : "uppercase hover:bg-warning hover:rounded-lg hover:text-black"
+            }
+            to={"/dashboard/alltask"}
+          >
+            <div className="flex items-center gap-2 py-2 pl-4">
+              <MdOutlineDashboard/> All Tasks
             </div>
           </NavLink>
           <NavLink

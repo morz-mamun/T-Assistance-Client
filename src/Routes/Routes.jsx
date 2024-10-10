@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'edit/:id',
-          element: <EditTask></EditTask>,
+          element: <PrivateRoute><EditTask/></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/allTask/${params.id}`)
         }
       ]
