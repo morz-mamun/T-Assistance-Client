@@ -67,7 +67,7 @@ const DashBoard = () => {
 
         <ul className="menu md:p-4 text-base border-b-2 border-warning space-y-5">
           <NavLink 
-            to={"/dashboard"}
+            to={"/dashboard/taskdashboard"}
             className={({ isActive }) =>
               isActive
                 ? "bg-warning text-black rounded-lg uppercase"
@@ -112,7 +112,6 @@ const DashBoard = () => {
       <div className="flex-1">
         <DNavbar></DNavbar>
         <div className="bg-white ">
-          <AllTask></AllTask>
           <Outlet></Outlet>
         </div>
       </div>
