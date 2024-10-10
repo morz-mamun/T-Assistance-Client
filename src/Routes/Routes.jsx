@@ -11,6 +11,7 @@ import AllTask from "../Pages/Dashboard/AllTask/AllTask";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import TodoBoard from "../Pages/Dashboard/TodoBoard/Components/TodoBoard";
+import TaskDashboard from "../Pages/Dashboard/TaskDashboard/TaskDashboard";
 
 
 const router = createBrowserRouter([
@@ -48,8 +49,8 @@ const router = createBrowserRouter([
       element: <PrivateRoute><DashBoard /></PrivateRoute>,
       children: [
         {
-          path: "allTask",
-          element: <PrivateRoute><AllTask/></PrivateRoute>
+          path: "taskdashboard",
+          element: <PrivateRoute><TaskDashboard /></PrivateRoute>
         },
         {
           path: 'mytask',

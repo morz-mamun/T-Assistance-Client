@@ -4,6 +4,7 @@ import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import DNavbar from "../Pages/Dashboard/DNavbar/DNavbar";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
+import AllTask from "../Pages/Dashboard/AllTask/AllTask";
 
 
 const DashBoard = () => {
@@ -65,13 +66,18 @@ const DashBoard = () => {
         {/* dashboard url */}
 
         <ul className="menu md:p-4 text-base border-b-2 border-warning space-y-5">
-          <div
-            className="uppercase hover:bg-warning hover:rounded-lg hover:text-black"
+          <NavLink 
+            to={"/dashboard"}
+            className={({ isActive }) =>
+              isActive
+                ? "bg-warning text-black rounded-lg uppercase"
+                : "uppercase hover:bg-warning hover:rounded-lg hover:text-black"
+            }
           >
-            <div className="flex items-center gap-2 py-2 pl-3">
+            <div className="flex items-center gap-2 py-2 pl-4">
               <MdOutlineDashboard className="text-xl"/> TASKS DashBoard
             </div>
-          </div>
+          </NavLink>
           <NavLink
             className={({ isActive }) =>
               isActive
@@ -106,6 +112,7 @@ const DashBoard = () => {
       <div className="flex-1">
         <DNavbar></DNavbar>
         <div className="bg-white ">
+          <AllTask></AllTask>
           <Outlet></Outlet>
         </div>
       </div>
