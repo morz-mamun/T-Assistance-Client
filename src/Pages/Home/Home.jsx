@@ -1,5 +1,6 @@
 import AudienceT from "./AudienceT/AudienceT";
 import Banner from "./Banner/Banner";
+import FAQSection from "./FAQSection/FAQSection";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
            <Banner></Banner> 
            <AudienceT></AudienceT>
+           <FAQSection></FAQSection>
         </div>
     );
 };
